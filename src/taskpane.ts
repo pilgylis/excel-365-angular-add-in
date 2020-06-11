@@ -11,9 +11,11 @@ if (environment.production) {
 const sideloadMsg = document.getElementById('sideload-msg');
 sideloadMsg.innerText = 'Please sideload your addin to see app body.';
 
-sideloadMsg.style.display = 'none';
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => {
-    sideloadMsg.innerText = err;
-    sideloadMsg.style.display = 'block';
-  });
+Office.initialize = () => {
+  sideloadMsg.style.display = 'none';
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => {
+      sideloadMsg.innerText = err;
+      sideloadMsg.style.display = 'block';
+    });
+};

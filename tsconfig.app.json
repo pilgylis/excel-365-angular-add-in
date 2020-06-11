@@ -2,11 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [
+      "office-js",
+      "node"
+    ]
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/taskpane.ts",
+    "src/commands.ts"
   ],
   "include": [
     "src/**/*.d.ts"

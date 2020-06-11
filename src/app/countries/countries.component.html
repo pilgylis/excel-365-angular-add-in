@@ -1,0 +1,31 @@
+<main class="ms-welcome__main">
+  <div class="ms-SearchBox">
+    <input class="ms-SearchBox-field" type="text" placeholder="search" value="" (keyup)="filterText = $event.target.value"/>
+    <a href="javascript:void(0)" (click)="insertTable()">Insert Table</a>&nbsp;
+    <a href="javascript:void(0)" (click)="openDialog()">Open Dialog</a>
+  </div>
+  <table class="ms-Table ms-Table--fixed">
+    <thead>
+      <th>#</th>
+      <th>Country Name</th>
+      <th>Code2</th>
+      <th>Code3</th>
+      <th>Region</th>
+      <th>Subregion</th>
+      <th>Capital</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredCountries; let i = index">
+        <td>{{i + 1}}</td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.name)">{{item.name}}</a></td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.alpha2Code)">{{item.alpha2Code}}</a></td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.alpha3Code)">{{item.alpha3Code}}</a></td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.region)">{{item.region}}</a></td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.subregion)">{{item.subregion}}</a></td>
+        <td><a href="javascript:void(0)" (click)="insertText(item.capital)">{{item.capital}}</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</main>
